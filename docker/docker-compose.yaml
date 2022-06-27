@@ -6,8 +6,7 @@ services:
       - "80:80" 
     volumes: 
       - $PWD/jenkins_home:/var/jenkins_home 
-    networks: 
-      - net 
+    network_mode: 'host'
 
   db:
     image: mysql:5.7 
@@ -15,5 +14,4 @@ services:
       - "MYSQL_ROOT_PASSWORD=1234" 
     volumes: 
       - $PWD/db_data:/var/lib/mysql 
-    networks: 
-      - net 
+    network_mode: 'host'
